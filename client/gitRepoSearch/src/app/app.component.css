@@ -1,9 +1,9 @@
 .bookMarks {
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 .searchRepo {
-  background-color: #ffffff;
+  background-color: #eeeeee;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {

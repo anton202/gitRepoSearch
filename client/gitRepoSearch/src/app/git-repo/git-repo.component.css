@@ -1,0 +1,37 @@
+.gitRepo{
+    border: 1px solid black;
+}
+
+.gitRepo__avatar{
+    flex-grow: 2;
+    border-right: 0.5px solid black;
+}
+
+.gitRepo__info{
+    flex-grow: 3;
+}
+
+.gitRepo__bookMark{
+    flex-grow: 1;
+}
+
+.gitRepo__name{
+    text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+   .gitRepo{
+       display: flex;
+       height: 80px;
+       width: 100%
+   }
+    
+   i{
+    display: block;
+    width: 80%;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+   }
+  }

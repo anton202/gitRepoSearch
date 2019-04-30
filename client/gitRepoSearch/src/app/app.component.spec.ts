@@ -1,31 +1,41 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { BookMarksComponent } from './book-marks/book-marks.component';
+import { GitRepoComponent } from './git-repo/git-repo.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
+      declarations: [AppComponent, HeaderComponent, BookMarksComponent, GitRepoComponent ],
+    });
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'gitRepoSearch'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('gitRepoSearch');
-  });
+  describe('toggle bookMarks', () => {
+    it('should return true if displayBookMarks set to false', () => {
+      component.displayBookMarks = false;
+      component.openBookMarks();
+      expect(component.displayBookMarks).toBeTruthy();
+    })
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to gitRepoSearch!');
-  });
+    it('should return false id disaplyBookMarks set to true', () => {
+      component.displayBookMarks = true;
+      component.openBookMarks();
+      expect(component.displayBookMarks).toBeFalsy()
+    })
+
+  })
 });
