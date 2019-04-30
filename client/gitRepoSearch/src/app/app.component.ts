@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gitRepoSearch';
+  displayBookMarks = false;
+
+  openBookMarks(){
+    if(!this.displayBookMarks){
+      this.displayBookMarks = true;
+    }else{
+      this.displayBookMarks = false
+    }
+  }
 }
