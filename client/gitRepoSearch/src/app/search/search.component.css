@@ -1,0 +1,24 @@
+input{
+    text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  main {
+    margin-bottom: 30px;
+  }
+
+  input {
+    width: 80%;
+    height: 30px;
+    border-radius: 3px;
+    display: block;
+    margin: auto;
+  }
+
+  button {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+  }
+}

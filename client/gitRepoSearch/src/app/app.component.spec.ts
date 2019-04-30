@@ -3,6 +3,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BookMarksComponent } from './book-marks/book-marks.component';
 import { GitRepoComponent } from './git-repo/git-repo.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { SearchComponent } from './search/search.component';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -10,7 +12,11 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, HeaderComponent, BookMarksComponent, GitRepoComponent ],
+      declarations: [
+        AppComponent, HeaderComponent,
+        BookMarksComponent, GitRepoComponent,
+        SearchResultsComponent, SearchComponent
+      ],
     });
   });
 

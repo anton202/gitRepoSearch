@@ -2,15 +2,30 @@
   background-color: #ffffff;
 }
 
+.bookMarks__button{
+  display: none;
+}
 .searchRepo {
   background-color: #eeeeee;
+  padding-top: 50px;
 }
 
+.bookMarks__container{
+  display: block;
+}
 @media (min-width: 320px) and (max-width: 480px) {
   .bookMarks__button {
+    display: block;
     width: 100%;
     height: 60px;
   }
 
+  main{
+    height: 100%;
+  }
+
+  .searchRepo{
+    height: 100%;
+  }
 
 }

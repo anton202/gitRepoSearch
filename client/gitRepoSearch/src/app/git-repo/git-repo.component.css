@@ -19,11 +19,17 @@
     text-align: center;
 }
 
+i{
+    color: white;
+    cursor: pointer;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
    .gitRepo{
        display: flex;
        height: 80px;
-       width: 100%
+       width: 95%;
+       margin: auto;
    }
     
    i{

@@ -1,14 +1,15 @@
- 
-<app-header></app-header>
+ <app-header></app-header>
 
-<main>
-  <div class="bookMarks">
-      <button class="bookMarks__button" (click)="openBookMarks()">Bookmarks</button>
-      <div [ngStyle]="{display: displayBookMarks ? 'block' : 'none'}">
-        <app-book-marks></app-book-marks>
-      </div>
-  </div>
-<div class="searchRepo">
-
-</div>
-</main>
+ <main>
+   <div class="bookMarks">
+     
+     <button class="bookMarks__button" (click)="openBookMarks()">Bookmarks</button>
+     <div [ngStyle]="{display: displayBookMarks ? 'block' : 'none'}">
+       <app-book-marks></app-book-marks>
+     </div>
+   </div>
+   <div class="searchRepo">
+     <app-search></app-search>
+     <app-search-results></app-search-results>
+   </div>
+ </main>
