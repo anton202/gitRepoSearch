@@ -1,7 +1,9 @@
 main{
-  width: 60%;
+  width: 40%;
   margin: auto;
   margin-top: 50px;
+  height: 500px;
+  overflow-y: auto;
 }
 
 img{
