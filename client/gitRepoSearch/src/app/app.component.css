@@ -1,30 +1,54 @@
-.bookMarks {
-  background-color: #ffffff;
+main {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
 }
 
-.bookMarks__button{
+.bookMarks {
+  background-color: #f5f5f5;
+  flex: 1;
+}
+
+.bookMarks__button {
   display: none;
 }
+
 .searchRepo {
   background-color: #eeeeee;
-  padding-top: 50px;
+  padding-top: 10%;
+  flex: 2;
 }
 
-.bookMarks__container{
+.bookMarks__container {
   display: block;
 }
+
+.bookMarksMobile {
+  display: none;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
+  .bookMarks {
+    display: none;
+  }
+
+  .bookMarksMobile {
+    display: block;
+  }
+
   .bookMarks__button {
     display: block;
     width: 100%;
     height: 60px;
   }
 
-  main{
+  main {
     height: 100%;
+    display: block;
   }
 
-  .searchRepo{
+  .searchRepo {
+    padding-top: 50px;
     height: 100%;
   }
 

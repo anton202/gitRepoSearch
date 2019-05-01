@@ -2,9 +2,11 @@
 
  <main>
    <div class="bookMarks">
-     
+     <app-book-marks></app-book-marks>
+   </div>
+   <div class="bookMarksMobile">
      <button class="bookMarks__button" (click)="openBookMarks()">Bookmarks</button>
-     <div [ngStyle]="{display: displayBookMarks ? 'block' : 'none'}">
+     <div class="bookMarks__container" [ngStyle]="{display: displayBookMarks ? 'block' : 'none'}">
        <app-book-marks></app-book-marks>
      </div>
    </div>

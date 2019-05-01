@@ -1,43 +1,58 @@
-.gitRepo{
-    border: 1px solid black;
+.gitRepo {
+  display: flex;
+  height: 100px;
+  border: 1px solid gray;
+  border-radius: 4px;
 }
 
-.gitRepo__avatar{
-    flex-grow: 2;
-    border-right: 0.5px solid black;
+.gitRepo__avatar {
+  flex-grow: 1.5;
+  border-right: 0.5px solid gray;
 }
 
-.gitRepo__info{
-    flex-grow: 3;
+.gitRepo__info {
+  flex-grow: 3;
 }
 
-.gitRepo__bookMark{
-    flex-grow: 1;
+.gitRepo__bookMark {
+  flex-grow: 1;
 }
 
-.gitRepo__name{
-    text-align: center;
+.gitRepo__name {
+  text-align: center;
 }
 
-i{
-    color: white;
-    cursor: pointer;
+i {
+  color: white;
+  cursor: pointer;
+  display: block;
+  width: 80%;
+  font-size: 50px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  padding-left: 40%;
+
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-   .gitRepo{
-       display: flex;
-       height: 80px;
-       width: 95%;
-       margin: auto;
-   }
-    
-   i{
+  .gitRepo {
+    height: 80px;
+    width: 95%;
+    margin: auto;
+  }
+
+  .gitRepo__avatar {
+    flex-grow: 2;
+  }
+
+  i {
     display: block;
     width: 80%;
     font-size: 40px;
     text-align: center;
     margin: auto;
     margin-top: 20px;
-   }
+    padding-left: 30%;
   }
+}

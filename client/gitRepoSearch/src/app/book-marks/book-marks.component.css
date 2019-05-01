@@ -1,0 +1,14 @@
+main{
+width: 90%;
+margin: auto;
+}
+p{
+    text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  p{
+      display: none;
+  }
+    
+  }
