@@ -1,5 +1,5 @@
 <main>
-  <input #name type="text" placeholder=" Enter repository name">
-  <button (click)="search(name.value)"> Search</button>
+  <input (keyup)="$event.keyCode === 13 ? search(name.value) : null" #name type="text" placeholder=" Enter repository name">
+  <button (click)="search(name.value)" > Search</button>
   <img *ngIf="loading" src="../../assets/loadingSpinner.gif" alt="loadingspinner">
 </main>
