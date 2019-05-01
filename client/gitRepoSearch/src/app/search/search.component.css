@@ -38,6 +38,12 @@ button:hover {
   background-color: #27ae60;
 }
 
+img{
+  display: block;
+  width: 20%;
+  margin: auto;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   main {
     margin-bottom: 30px;

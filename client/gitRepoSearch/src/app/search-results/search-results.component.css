@@ -6,11 +6,6 @@ main{
   overflow-y: auto;
 }
 
-img{
-  display: block;
-  width: 30%;
-  margin: auto;
-}
 
 @media (min-width: 320px) and (max-width: 480px) {
   main{

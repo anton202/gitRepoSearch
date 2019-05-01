@@ -8,6 +8,7 @@ import { SearchService } from '../search/search.service';
 })
 export class SearchResultsComponent implements OnInit {
   gitRepos
+  
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
