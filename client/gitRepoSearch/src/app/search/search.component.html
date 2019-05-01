@@ -1,4 +1,4 @@
 <main>
-  <input type="text" placeholder=" Enter repository name">
-  <button> Search</button>
+  <input #name type="text" placeholder=" Enter repository name">
+  <button (click)="search(name.value)"> Search</button>
 </main>

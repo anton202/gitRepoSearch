@@ -5,6 +5,7 @@ import { BookMarksComponent } from './book-marks/book-marks.component';
 import { GitRepoComponent } from './git-repo/git-repo.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { SearchComponent } from './search/search.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -17,6 +18,7 @@ describe('AppComponent', () => {
         BookMarksComponent, GitRepoComponent,
         SearchResultsComponent, SearchComponent
       ],
+      imports: [HttpClientModule]
     });
   });
 

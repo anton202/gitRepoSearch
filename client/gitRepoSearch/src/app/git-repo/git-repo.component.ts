@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-git-repo',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./git-repo.component.css']
 })
 export class GitRepoComponent implements OnInit {
-
+  @Input() avatr;
+  @Input() repoName
   constructor() { }
 
   ngOnInit() {

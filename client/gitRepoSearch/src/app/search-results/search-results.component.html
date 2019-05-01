@@ -1,4 +1,7 @@
 <main>
-    <img src="../../assets/loadingSpinner.gif" alt="loadingspinner">
- <app-git-repo></app-git-repo>
+  <img src="../../assets/loadingSpinner.gif" alt="loadingspinner">
+  <div class="repos" *ngIf="gitRepos">
+    <app-git-repo *ngFor="let repo of gitRepos.items" [avatr]="repo.owner.avatar_url" [repoName]="repo.name">
+    </app-git-repo>
+  </div>
 </main>
