@@ -9,22 +9,23 @@ export class SearchService {
     public loading = false;
     public gitRepos = new Subject();
     public error = new Subject<string>();
-    private gitApiUrl = 'https://api.github.com/search/repositories33?q=';
+    private gitApiUrl = 'https://api.github.com/search/repositories?q=';
 
     constructor(private http: HttpClient) { }
 
     // fetching git repos from api.
-    public getRepos(repoName) {
+    public getRepos(repoName):void {
         this.loading = true;
         this.http.get(this.gitApiUrl + repoName)
             .subscribe(repos => {
                 this.loading = false
                 this.gitRepos.next(repos)
+                console.log(repos)
             },
                 error => {this.handelEror(); this.loading = false});
     }
 
-    private handelEror() {
+    private handelEror():void {
         this.error.next('Somthing went wrong, try again')
     }
 
