@@ -7,12 +7,14 @@ import { SearchService } from '../search/search.service';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
-  gitRepos
+  public gitRepos:{};
+  public error: string;
   
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
     this.searchService.gitRepos.subscribe(repos => this.gitRepos = repos)
+    this.searchService.error.subscribe( errorMessage => this.error = errorMessage)
   }
 
 }

@@ -15,9 +15,9 @@ export class SearchComponent implements OnInit {
    
   }
 
+  // on user click on search button or Enter,
+  // passing the repository name to the fetching function inside searchService.
   search(repoName){
-    console.log(repoName);
-   
     this.searchService.getRepos(repoName)
   }
 
