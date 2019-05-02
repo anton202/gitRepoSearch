@@ -7,17 +7,12 @@ import { SearchService } from './search.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
- results;
- 
   constructor(private searchService: SearchService) { }
 
-  ngOnInit() {
-   
-  }
+  ngOnInit() {}
 
-  // on user click on search button or Enter,
   // passing the repository name to the fetching function inside searchService.
-  search(repoName){
+ public search(repoName){
     this.searchService.getRepos(repoName)
   }
 
