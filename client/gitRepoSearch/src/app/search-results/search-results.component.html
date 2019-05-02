@@ -1,10 +1,10 @@
 <main>
   <div class="repos" *ngIf="gitRepos && gitRepos.items.length > 0 && !searchService.loading">
-    <app-git-repo *ngFor="let repo of gitRepos.items" [avatr]="repo.owner.avatar_url" [repoName]="repo.name">
+    <app-git-repo *ngFor="let repo of gitRepos.items" [avatr]="repo.owner.avatar_url" [repoName]="repo.name" [isColored]='false'>
     </app-git-repo>
   </div>
   
-  <div class="noReposFound" *ngIf="gitRepos && gitRepos.items.length === 0">
+  <div class="noReposFound" *ngIf="gitRepos && gitRepos.items.length === 0 && !searchService.loading">
     <p style="text-align:center">We couldn’t find any repositories</p>
   </div>
   <div class="error" *ngIf="error">

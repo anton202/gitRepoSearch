@@ -8,6 +8,7 @@ import { BookMarksComponent } from './book-marks/book-marks.component';
 import { SearchComponent } from './search/search.component';
 import { GitRepoComponent } from './git-repo/git-repo.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import  { ColorStarDirective } from '../app/git-repo/color-star.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     BookMarksComponent,
     SearchComponent,
     GitRepoComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    ColorStarDirective
+
   ],
   imports: [
     BrowserModule,

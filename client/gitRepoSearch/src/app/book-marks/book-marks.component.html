@@ -1,4 +1,6 @@
 <main>
   <p>Bookmarks</p>
-  <app-git-repo></app-git-repo>
+  <div class="bookMarks" *ngIf="bookMarks">
+  <app-git-repo *ngFor="let repo of bookMarks" [repoName]="repo.repoName" [avatr]="repo.avatr" [isColored]="true"></app-git-repo>
+</div>
 </main>

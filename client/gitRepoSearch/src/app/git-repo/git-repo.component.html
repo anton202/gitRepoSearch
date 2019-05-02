@@ -6,7 +6,7 @@
   <p class="gitRepo__name">{{repoName}}</p>
 </div>
 <div class="gitRepo__bookMark">
-    <i class="material-icons">
+    <i class="material-icons" (click)="saveToBookmarks(repoName, avatr)" [appColorStar]="isColored">
         star
         </i>
 </div>
