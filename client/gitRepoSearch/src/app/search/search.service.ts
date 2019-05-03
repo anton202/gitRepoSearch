@@ -13,14 +13,14 @@ export class SearchService {
 
     constructor(private http: HttpClient) { }
 
-    // fetching git repos from api and passing the result to search-results.ts
+    // fetching git repos from api and passing the result to search-results.service
     public getRepos(repoName):void {
         this.loading = true;
         this.http.get<{items}>(this.gitApiUrl + repoName)
             .subscribe(repos => {
                 this.loading = false
                 this.gitRepos.next(repos.items)
-                console.log(repos)
+               
             },
                 error => {this.handelEror(); this.loading = false});
     }

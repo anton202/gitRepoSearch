@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent  {
   displayBookMarks = false;
 
+  // displays the bookMarks section if opend on tablet or a smartphone
   openBookMarks(){
     if(!this.displayBookMarks){
       this.displayBookMarks = true;

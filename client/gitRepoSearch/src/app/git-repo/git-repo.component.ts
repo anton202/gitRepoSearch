@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BookMarksService } from '../book-marks/book-marks.service';
+import { SearchResultsService } from '../search-results/search-results.service';
 
 @Component({
   selector: 'app-git-repo',
@@ -11,23 +12,21 @@ export class GitRepoComponent implements OnInit {
   @Input() public repoName: string;
   @Input() public isSaved: boolean;
   
-  constructor(private bookMarksService: BookMarksService) { }
+
+  constructor(private bookMarksService: BookMarksService, private searchResultsService: SearchResultsService) { }
 
   ngOnInit() {
+    
   }
 
-  // private saveToBookmarks(repoName, avatr): void{
-  //   console.log(avatr,repoName)
-  //   this.bookMarksService.bookMarks.push({repoName: repoName,avatr: avatr})
-  // }
-
-  private saveOrDeleteRepoFromBookmarks(repoName,avatr){
-    if(!this.isSaved){
+  private saveOrDeleteRepoFromBookmarks(repoName, avatr) {
+    if (!this.isSaved) {
       this.isSaved = true;
-      this.bookMarksService.saveRepo({repoName,avatr})
-    }else{
+      this.bookMarksService.saveRepo({ repoName, avatr })
+    } else {
       this.isSaved = false;
       this.bookMarksService.removeRepo(repoName)
+      this.searchResultsService.unBookMark(repoName, avatr)
     }
   }
 
