@@ -1,14 +1,25 @@
-main{
-width: 90%;
-margin: auto;
+main {
+  width: 90%;
+  margin: auto;
+  height: 800px;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
-p{
-    text-align: center;
+
+.bookMarks{
+    height: 90%;
+    overflow-y: auto;
+    width: 100%;
+    padding-right: 15px;
+}
+
+p {
+  text-align: center;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  p{
-      display: none;
+  p {
+    display: none;
   }
-    
-  }
+
+}
