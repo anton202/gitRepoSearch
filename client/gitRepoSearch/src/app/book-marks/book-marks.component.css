@@ -6,18 +6,22 @@ main {
   overflow-x: hidden;
 }
 
-.bookMarks{
-    height: 90%;
-    overflow-y: auto;
-    width: 100%;
-    padding-right: 15px;
+.bookMarks {
+  height: 90%;
+  overflow-y: auto;
+  width: 100%;
+  padding-right: 15px;
 }
 
 p {
   text-align: center;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 768px) {
+  main {
+      height: 250px;
+  }
+
   p {
     display: none;
   }
