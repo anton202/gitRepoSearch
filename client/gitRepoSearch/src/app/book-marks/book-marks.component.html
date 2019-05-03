@@ -3,4 +3,5 @@
   <div class="bookMarks" *ngIf="bookMarks">
   <app-git-repo *ngFor="let repo of bookMarks" [repoName]="repo.repoName" [avatr]="repo.avatr" [isSaved]="true"></app-git-repo>
 </div>
+<p *ngIf="bookMarks.length === 0">Click on the Star to save a repository</p>
 </main>

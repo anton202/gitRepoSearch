@@ -19,11 +19,10 @@ export class SearchResultsComponent implements OnInit{
   ) { }
 
   ngOnInit() {
-    
    this.searchResultsService.gitRepos.subscribe(repos => {
       this.gitRepos = repos
+      // resets the error property if an error already occured.
       this.error = '';
-      console.log(this.gitRepos)
     })
     this.searchService.error.subscribe(errorMessage => this.error = errorMessage)
   }

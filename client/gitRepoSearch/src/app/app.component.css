@@ -27,13 +27,14 @@ main {
   display: none;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 768px) {
   .bookMarks {
     display: none;
   }
 
   .bookMarksMobile {
     display: block;
+    background-color: #f5f5f5;
   }
 
   .bookMarks__button {

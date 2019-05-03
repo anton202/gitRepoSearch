@@ -25,7 +25,7 @@ export class GitRepoComponent implements OnInit {
       this.bookMarksService.saveRepo({ repoName, avatr })
     } else {
       this.isSaved = false;
-      this.bookMarksService.removeRepo(repoName)
+      this.bookMarksService.removeRepo(repoName, avatr)
       this.searchResultsService.unBookMark(repoName, avatr)
     }
   }

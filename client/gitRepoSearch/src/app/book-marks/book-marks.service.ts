@@ -13,9 +13,9 @@ export class BookMarksService {
         this.bookMarks.push(repo);
     }
 
-    public removeRepo(repoName: string): void {
+    public removeRepo(repoName: string, avatar: string): void {
         this.bookMarks.forEach((repo, idx) => {
-            if (repo.repoName === repoName) {
+            if (repo.repoName === repoName && repo.avatr === avatar) {
                 this.bookMarks.splice(idx, 1)
             }
         })
