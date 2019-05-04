@@ -14,6 +14,7 @@ export class BookMarksComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.bookMarksService.getBookMarks()
   }
 
 }

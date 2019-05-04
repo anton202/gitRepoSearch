@@ -22,8 +22,11 @@ p {
       height: 250px;
   }
 
-  p {
+  /* p {
     display: none;
-  }
+  } */
 
+  .bookMarks{
+    height: 70%;
+  }
 }

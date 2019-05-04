@@ -15,18 +15,16 @@ export class GitRepoComponent implements OnInit {
 
   constructor(private bookMarksService: BookMarksService, private searchResultsService: SearchResultsService) { }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
-  public saveOrDeleteRepoFromBookmarks(repoName, avatr) {
+  public saveOrDeleteRepoFromBookmarks(repoName, avatar) {
     if (!this.isSaved) {
       this.isSaved = true;
-      this.bookMarksService.saveRepo({ repoName, avatr })
+      this.bookMarksService.saveRepo({ repoName, avatar })
     } else {
       this.isSaved = false;
-      this.bookMarksService.removeRepo(repoName, avatr)
-      this.searchResultsService.unBookMark(repoName, avatr)
+      this.bookMarksService.removeRepo(repoName, avatar)
+      this.searchResultsService.unBookMark(repoName, avatar)
     }
   }
 

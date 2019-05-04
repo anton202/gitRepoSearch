@@ -1,4 +1,4 @@
 export interface GitRepo {
     repoName: string;
-    avatr: string;
+    avatar: string;
 }

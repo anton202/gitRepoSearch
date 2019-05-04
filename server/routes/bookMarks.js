@@ -14,10 +14,10 @@ app.post('/save',(req,res)=>{
     if(!req.session.bookMarks){
         req.session.bookMarks = [];
         req.session.bookMarks.push(req.body);
-        console.log('bookMarked saved');
     }else{
         req.session.bookMarks.push(req.body)
     }
+    console.log(req.session.bookMarks)
     res.end()
 })
 
