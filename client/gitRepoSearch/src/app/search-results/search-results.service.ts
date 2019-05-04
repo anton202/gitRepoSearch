@@ -36,11 +36,13 @@ export class SearchResultsService {
     // exist in gitReposContaner. if the removed repo name matches one of the results the function assign a false value to isBookMarked property 
     // of that result object.
     public unBookMark(repoName, avatar){
+        if(this.gitReposContainer){
         this.gitReposContainer.forEach((repo:{name, isBookMarked, owner},idx)=>{
             if(repo.name === repoName && repo.owner.avatar_url === avatar){
                 repo.isBookMarked = false
             }
         })
+    }
        this.gitRepos.next(this.gitReposContainer)
     }
 }

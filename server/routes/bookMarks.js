@@ -27,7 +27,6 @@ app.delete('/delete/:repoName/:avatar',(req,res)=>{
     bookMarks.forEach((bookMark, idx) => {
         if(bookMark.repoName === repoName && bookMark.avatar === avatar){
             bookMarks.splice(idx,1)
-            console.log('deleted')
         }
     });
     res.end()
