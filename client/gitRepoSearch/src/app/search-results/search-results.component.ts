@@ -15,7 +15,7 @@ export class SearchResultsComponent implements OnInit{
 
   constructor(
     private searchResultsService: SearchResultsService,
-    private searchService: SearchService
+    public searchService: SearchService
   ) { }
 
   ngOnInit() {
