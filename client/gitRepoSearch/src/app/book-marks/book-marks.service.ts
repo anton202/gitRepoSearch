@@ -15,10 +15,10 @@ export class BookMarksService {
 
     constructor(private http: HttpClient) { }
 
-    public getBookMarks(){
+    public getBookMarks() {
         this.http.get<Array<GitRepo>>(this.apiUrl + '/bookMarks')
             .subscribe(bookMarks => {
-                if(bookMarks){
+                if (bookMarks) {
                     bookMarks.forEach(bookMark => this.bookMarks.push(bookMark))
                 }
                 console.log(this.bookMarks)
@@ -27,9 +27,7 @@ export class BookMarksService {
 
     public saveRepo(repo: GitRepo): void {
         this.bookMarks.push(repo);
-        this.http.post(this.apiUrl + '/bookMarks/save',repo)
-            .subscribe(null)
-        console.log(this.bookMarks)
+        this.post(repo)
     }
 
     public removeRepo(repoName: string, avatar: string): void {
@@ -38,15 +36,25 @@ export class BookMarksService {
                 this.bookMarks.splice(idx, 1)
             }
         })
+        this.delete(repoName, avatar)
+    }
+
+    private post(repo): void {
+        this.http.post(this.apiUrl + '/bookMarks/save', repo)
+            .subscribe(null)
+        console.log(this.bookMarks)
+    }
+
+    private delete(repoName, avatar): void {
         this.http.delete(this.apiUrl + '/bookMarks/delete/' + repoName + '/' + encodeURIComponent(avatar))
             .subscribe(null)
     }
 
     // returning a list of repo names and their avatar url, to avoid using nested loops in searchResultsService-checkIfBookMarked().
-    public listOfRepoNames():object {
+    public listOfRepoNames(): object {
         return this.bookMarks.reduce((acc, cValue) => {
-             acc[cValue.repoName] = cValue.avatar
-             return acc
+            acc[cValue.repoName] = cValue.avatar
+            return acc
         }, {})
     }
 }
