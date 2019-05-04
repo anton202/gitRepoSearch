@@ -38,6 +38,8 @@ export class BookMarksService {
                 this.bookMarks.splice(idx, 1)
             }
         })
+        this.http.delete(this.apiUrl + '/bookMarks/delete/' + repoName + '/' + encodeURIComponent(avatar))
+            .subscribe(null)
     }
 
     // returning a list of repo names and their avatar url, to avoid using nested loops in searchResultsService-checkIfBookMarked().
