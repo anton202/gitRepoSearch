@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const routes = require('./routes');
 const session = require('express-session');
+const bodyParser = require('body-parser');
 
 app.use(session({secret: "Shh, its a secret!"}));
-
+app.use(bodyParser.json())
 app.use(routes)
 
 
