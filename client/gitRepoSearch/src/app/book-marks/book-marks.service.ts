@@ -21,7 +21,6 @@ export class BookMarksService {
                 if (bookMarks) {
                     bookMarks.forEach(bookMark => this.bookMarks.push(bookMark))
                 }
-                console.log(this.bookMarks)
             })
     }
 
@@ -42,7 +41,6 @@ export class BookMarksService {
     private post(repo): void {
         this.http.post(this.apiUrl + '/bookMarks/save', repo)
             .subscribe(null)
-        console.log(this.bookMarks)
     }
 
     private delete(repoName, avatar): void {
