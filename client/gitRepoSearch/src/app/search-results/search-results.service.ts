@@ -48,7 +48,6 @@ export class SearchResultsService {
                 }
             })
         }
-
         this.gitRepos.next(this.gitReposContainer)
     }
 }
