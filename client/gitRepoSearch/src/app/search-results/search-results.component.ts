@@ -12,11 +12,10 @@ export class SearchResultsComponent implements OnInit{
   public gitRepos: Array<{}> ;
   public error: string;
  
-
   constructor(
     private searchResultsService: SearchResultsService,
     public searchService: SearchService
-  ) { }
+  ) {}
 
   ngOnInit() {
    this.searchResultsService.gitRepos.subscribe(repos => {

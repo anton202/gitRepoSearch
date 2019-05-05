@@ -7,9 +7,9 @@ import { Subject } from "rxjs";
     providedIn: 'root'
 })
 export class SearchResultsService {
-    public gitReposContainer: Array<{}>;
+    public gitReposContainer: Array<{}> = [];
     public gitRepos = new Subject<Array<{}>>();
-   
+
     constructor(private searchService: SearchService, private bookMarksService: BookMarksService) {
         searchService.gitRepos.subscribe(repos => {
             this.gitReposContainer = repos
@@ -28,21 +28,27 @@ export class SearchResultsService {
                 repo.isBookMarked = true
             }
         });
-       
     }
 
     // this function is called when a user removes a bookMark from the bookMarks section.
     // the function itereates through gitReposContainer(which contains the current search results) and checks if the removed repository name 
-    // exist in gitReposContaner. if the removed repo name matches one of the results the function assign a false value to isBookMarked property 
-    // of that result object.
-    public unBookMark(repoName, avatar){
-        if(this.gitReposContainer){
-        this.gitReposContainer.forEach((repo:{name, isBookMarked, owner},idx)=>{
-            if(repo.name === repoName && repo.owner.avatar_url === avatar){
-                repo.isBookMarked = false
-            }
-        })
-    }
-       this.gitRepos.next(this.gitReposContainer)
+    // exist in gitReposContaner. if the removed repo name matches one of the results the function reassigning the result object with the a new object.
+    // only by reassigning a new object i succeeded to make angular rerender the search-results component and chane the color of the star back to gray.
+    public unBookMark(repoName, avatar) {
+        if (this.gitReposContainer) {
+            this.gitReposContainer.forEach((repo: { name, isBookMarked, owner }, idx) => {
+                if (repo.name === repoName && repo.owner.avatar_url === avatar) {
+                    this.gitReposContainer[idx] = {
+                        name: repoName,
+                        owner: {
+                            avatar_url: avatar
+                        },
+                        isBookMarked: false
+                    }
+                }
+            })
+        }
+
+        this.gitRepos.next(this.gitReposContainer)
     }
 }

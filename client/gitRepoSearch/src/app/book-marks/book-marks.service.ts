@@ -19,7 +19,7 @@ export class BookMarksService {
         this.http.get<Array<GitRepo>>(this.apiUrl + '/bookMarks')
             .subscribe(bookMarks => {
                 if (bookMarks) {
-                    bookMarks.forEach(bookMark => this.bookMarks.push(bookMark))
+                   this.bookMarks.push(...bookMarks)
                 }
             })
     }

@@ -12,7 +12,6 @@ export class GitRepoComponent implements OnInit {
   @Input() public repoName: string;
   @Input() public isSaved: boolean;
   
-
   constructor(private bookMarksService: BookMarksService, private searchResultsService: SearchResultsService) { }
 
   ngOnInit() {}
