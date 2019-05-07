@@ -1,6 +1,7 @@
 # GitRepoSearch
 
 # How to run the project
+To run the project you need to install angular and nodeJS.
 
 1. clone the repo.
 2. in the command line navigate to the cloned folder.
